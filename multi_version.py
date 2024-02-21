@@ -23,7 +23,7 @@ json_schema = {
             },
             "then": {
                 "properties" : {
-                    "product": { "$ref": "product.json"},
+                    "product": { "$ref": "product.schema.json"},
                     "customer_name" : {
                         "type" : "string",
                         "description": "名前",
@@ -41,7 +41,7 @@ json_schema = {
             },
             "then": {
                 "properties" : {
-                    "product": { "$ref": "product.json"},
+                    "product": { "$ref": "product.schema.json"},
                     "customer_name" : {
                         "type" : "string",
                         "description": "名前",
