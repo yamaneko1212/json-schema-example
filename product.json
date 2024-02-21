@@ -1,0 +1,18 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Product",
+    "description": "A product from Acme's catalog",
+    "type" : "object",
+    "properties" : {
+        "price" : {
+            "type" : ["string", "null"],
+            "description": "金額",
+            "pattern": "^[0-9]+(\\.[0-9]{1,2})?$"
+        },
+        "name" : {
+            "type" : "string",
+            "description": "名前"
+        }
+    },
+    "required": ["name", "price"]
+}
