@@ -58,11 +58,13 @@ json_schema = {
 }
 
 
-def retrieve_from_filesystem(uri: str):
-    """スキーマを解決します
+def retrieve_schema_from_filesystem(uri: str) -> (None | Resource):
+    """依存するスキーマを解決します
 
-    Arts:
-        uri: str 解決したいスキーマのURI
+    Args:
+        (str)uri: 解決したいスキーマのURI
+    Returns:
+        (None | Resource) スキーマ
     """
     self_location = 'https://example.com/'
     if uri.startswith(self_location):
@@ -72,7 +74,7 @@ def retrieve_from_filesystem(uri: str):
     return None
 
 def build_validator():
-    registry = Registry(retrieve=retrieve_from_filesystem)
+    registry = Registry(retrieve=retrieve_schema_from_filesystem)
     return Draft202012Validator(
         json_schema,
         registry=registry
